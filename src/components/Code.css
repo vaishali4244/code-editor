@@ -1,0 +1,6 @@
+.containerEditor{
+     display:flex;
+    flex-direction: row !important;
+     background:#060606; 
+    height:58vh; 
+}
