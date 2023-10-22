@@ -13,8 +13,10 @@
 }
 
 .title {
-    margin: auto 10px;
-    padding-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin: auto 12px; 
 }
 
 .copy {
@@ -33,4 +35,8 @@
 
 .container-result {
     height:35vh;
+}
+
+.header-top img{
+    margin-left: 5px;
 }

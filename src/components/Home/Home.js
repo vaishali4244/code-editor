@@ -1,8 +1,7 @@
 import React from "react";
-import Result from "./Result";
-import Code from "./Code";
+import Result from "../Result/Result";
+import Code from "../Code/Code";
 import './Home.css';
-
 
 
 const Home = () => {

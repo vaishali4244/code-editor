@@ -15,3 +15,7 @@
   background:#1d1e22 !important;
 }
 
+button:hover{
+border:2px solid rgba(95, 255, 47, 0.323);
+}
+

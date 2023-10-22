@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { DataContext } from '../context/DataProvider';
-import './Home.css';
+import { DataContext } from '../../context/DataProvider';
 
 
 const Result = () => {
@@ -25,7 +24,14 @@ const Result = () => {
 
     return (
         <div className='container-result'>
-            <iframe srcDoc={src} src="" title='Output' frameborder="0" sandbox="allow-scripts" width="100%" height="100%"></iframe>
+            <iframe
+                srcDoc={src}
+                src="" title='Output'
+                frameborder="0"
+                sandbox="allow-scripts"
+                width="100%"
+                height="100%"
+            ></iframe>
         </div>
     )
 }

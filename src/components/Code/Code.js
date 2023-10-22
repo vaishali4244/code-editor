@@ -1,6 +1,6 @@
 import React, { useCallback, useContext} from "react";
-import { DataContext } from "../context/DataProvider";
-import Editor from "./Editor";
+import { DataContext } from "../../context/DataProvider";
+import Editor from "../Editor/Editor";
 import './Code.css';
 
 
@@ -10,17 +10,17 @@ const Code = () => {
 
     const handleSaveHtml = useCallback(() => {
         localStorage.setItem("html", html);
-        alert("saved")
+        // alert("saved")
     }, [html])
 
     const handleSaveCss = useCallback(() => {
         localStorage.setItem("css", css);
-        alert("saved")
+        // alert("saved")
     }, [css])
 
     const handleSaveJs = useCallback(() => {
         localStorage.setItem("js", js)
-        alert("saved")
+        // alert("saved")
     }, [js])
 
 

@@ -1,11 +1,7 @@
-.controlledEditor{
-    color: white;
-    /* height: 58vh; */
-}
 
 .container{
     flex-grow:1;
-
+    
 display:flex;
 flex-direction:column;
 padding: 0 8px;
@@ -22,14 +18,22 @@ height:61.5vh;
 } 
 
 .heading {
-background:#1d1e22;
-display:flex;
-padding:9px 12px;
+    background:#1d1e22;
+    display:flex;
+    padding:9px 12px;
 height:2vh;
+justify-content: center;
+align-items: center;
 }
 
 .symbol{
     display:flex;
 justify-content:flex-end;
 margin:2px;
+}
+
+.controlledEditor{
+    color: white;
+    font-size: 1.15em;
+    letter-spacing: 0.02em;
 }
