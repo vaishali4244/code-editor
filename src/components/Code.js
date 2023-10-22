@@ -1,5 +1,4 @@
-import React, { useCallback, useContext, useEffect } from "react";
-import { Box, styled } from '@mui/material'
+import React, { useCallback, useContext} from "react";
 import { DataContext } from "../context/DataProvider";
 import Editor from "./Editor";
 import './Code.css';

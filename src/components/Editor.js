@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Box} from "@mui/material";
+import { Box, styled } from "@mui/material";
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import { Controlled as ControlledEditor } from 'react-codemirror2';
 import 'codemirror/lib/codemirror.css';
@@ -13,6 +13,36 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 import './Editor.css'
 
 
+// const Container = styled(Box)`
+// flex-grow:1;
+// flex-basic:0;
+// display:flex;
+// flex-direction:column;
+// padding: 0 8px;
+// height:61.5vh;
+// `
+
+// const Heading = styled(Box)`
+// background:#1d1e22;
+// display:flex;
+// padding:9px 12px;
+// height:2vh;
+// `
+
+// const ContentHeader = styled(Box)`
+// display: flex;
+// background: black;
+// color:white;
+// justify-content:space-between;
+// font-weight:600;
+// padding-top:0;
+// `
+// const Symbol = styled(Box)`
+// display:flex;
+// justify-content:flex-end;
+// margin:2px;
+
+// `
 
 const Editor = ({ heading, icon, color, value, onChange, handleSave }) => {
 
@@ -20,26 +50,30 @@ const Editor = ({ heading, icon, color, value, onChange, handleSave }) => {
     const [lock, setLock] = useState(true);
     const savedData = localStorage.getItem("code") || "";
 
-    useEffect(()=>{
-        if(savedData){
-        console.log("savedData", savedData);
+    useEffect(() => {
+        if (savedData) {
+            console.log("savedData", savedData);
         }
-    },[savedData])
-    
+    }, [savedData])
+
 
     const handleChange = useCallback((editor, data, value) => {
         onChange(value);
-    },[value])
+    }, [value])
 
-    const handleCopy = useCallback(()=>{
+    const handleCopy = useCallback(() => {
         navigator.clipboard.writeText(value);
         alert("copied");
-    },[value])
+    }, [value])
 
+    // const handleSave = useCallback(()=>{
+    //     localStorage.setItem("code",value)
+    //     alert("saved")
+    // },[value])
 
-    const handleLock =useCallback(()=>{
+    const handleLock = useCallback(() => {
         setLock(!lock);
-    },[lock])
+    }, [lock])
 
     return (
         <div className="container" style={open ? null : { flexGrow: 0 }} >
@@ -62,16 +96,17 @@ const Editor = ({ heading, icon, color, value, onChange, handleSave }) => {
                     {heading}
                 </div>
                 <div className="symbol">
-                    <button className="copy" 
-                     onClick={handleLock}
-                     >
-                        {lock===false?<LockIcon fontSize="small"/>
-                        :<LockOpenIcon fontSize="small"/>}
-                     </button>
-                    <button className="copy" style={{backgroundColor:hover?lock===true?"rgb(95, 255, 47)":"grey":"default"}} disabled={!lock} onClick={handleSave}>Save</button>
                     <button className="copy"
-                     style={{backgroundColor:hover?lock===true?"rgb(95, 255, 47)":"grey":"default"}}
-                    disabled={!lock} onClick={handleCopy}>Copy</button>
+                        onClick={handleLock}
+                    >
+                        {/* {lock===true?"unlocked":"lock"} */}
+                        {lock === false ? <LockIcon fontSize="small" />
+                            : <LockOpenIcon fontSize="small" />}
+                    </button>
+                    <button className="copy" style={{ backgroundColor: hover ? lock === true ? "rgb(95, 255, 47)" : "grey" : "default" }} disabled={!lock} onClick={handleSave}>Save</button>
+                    <button className="copy"
+                        style={{ backgroundColor: hover ? lock === true ? "rgb(95, 255, 47)" : "grey" : "default" }}
+                        disabled={!lock} onClick={handleCopy}>Copy</button>
                     <CloseFullscreenIcon
                         fontSize="medium"
                         onClick={() => setOpen(prevState => !prevState)} />

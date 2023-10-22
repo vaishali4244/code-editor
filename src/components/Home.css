@@ -1,5 +1,4 @@
 .container-home {
-    /* height: 64vh; */
     width: 100vw;
 }
 
@@ -30,4 +29,8 @@
     margin-right: 8px;
     color: black;
     cursor: pointer;
+}
+
+.container-result {
+    height:35vh;
 }
