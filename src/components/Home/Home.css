@@ -1,0 +1,42 @@
+.container-home {
+    width: 100vw;
+}
+
+.header-top {
+    height: 6.4vh;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #1d1e22;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin: auto 12px; 
+}
+
+.copy {
+    display: flex;
+    background: rgb(95, 255, 47);
+    min-width: 45px;
+    height: 25px;
+    padding:5px 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 8px;
+    color: black;
+    cursor: pointer;
+}
+
+.container-result {
+    height:35vh;
+}
+
+.header-top img{
+    margin-left: 5px;
+}
