@@ -20,7 +20,7 @@ const Result = () => {
             setSrc(sourceCode);
         }, 2000)
         return () => clearTimeout(timeout)
-    }, [html, css, js])
+    }, [sourceCode])
 
     return (
         <div className='container-result'>
