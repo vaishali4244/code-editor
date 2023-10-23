@@ -27,7 +27,7 @@ const Result = () => {
             <iframe
                 srcDoc={src}
                 src="" title='Output'
-                frameborder="0"
+                frameBorder="0"
                 sandbox="allow-scripts"
                 width="100%"
                 height="100%"
